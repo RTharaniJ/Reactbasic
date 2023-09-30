@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React simple project</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- babelis used to make jsx markup language to understand by browser -->
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+
+
+
+    <script type="text/babel"> // to change react code to js code need to mention in type as babel
+
+        const { useState } = React // to add "state" which is used to alter the data, which is gonna be in the initial stage
+
+        // React code starts 
+
+
+
+        // it can be "class" or "function" 
+        function HelloWorld(props) { // HelloWorld is component from react.component
+            // fuctional component is good with "React hook" concepts
+            const [question, setQuestion] = useState("by tharani") // there should be 2 properties 1st is a "state value name" and 2nd is a "state function"
+
+            function updateState() { // as "Event Handler"
+                setQuestion(" by Thamarai selvi")
+            }
+
+
+            return <div>
+                <h1>Hello World {props.message},{question}</h1>
+                <button onClick ={updateState}>change sender</button>
+            </div>// this JSX , also jsx should be mentioned in single tag element
+
+            //data can be handled in to ways as information in "props" and "state"
+
+        }
+        const { createRoot } = ReactDOM //"createRoot" function taken out from then "ReactDom" object
+        const root = createRoot(document.getElementById("root"))
+        root.render(<HelloWorld message="My Frind, How are you?" />) // call the component with JSX format (self closing)
+    </script>
+</body>
+
+</html>

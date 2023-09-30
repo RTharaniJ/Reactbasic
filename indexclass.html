@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React simple project</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- babelis used to make jsx markup language to understand by browser -->
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel"> // to change react code to js code need to mention in type as babel
+        // React code starts 
+        // it can be "class" or "function" 
+        class HelloWorld extends React.Component { // HelloWorld is component from react.component
+            render() {
+                // whatever needs to be your output can be given here 
+                return <h1>Hello World</h1> // this JSX
+
+            }
+
+        }
+        const {createRoot} = ReactDOM //"createRoot" function taken out from then "ReactDom" object
+        const root = createRoot(document.getElementById("root"))
+        root.render(<HelloWorld/>) // call the component with JSX format (self closing)
+    </script>
+</body>
+
+</html>
